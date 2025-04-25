@@ -23,12 +23,14 @@ def _convert_to_point(algebraic_notation):
 
 class ChessService:
     def __init__(self):
-        self.bishop_rules = Bishop()
-        self.king_rules = King()
-        self.knight_rules = Knight()
-        self.queen_rules = Queen()
-        self.rook_rules = Rook()
-        self.pawns_rules = Pawn()
+        self.figure_rules = {
+            'BISHOP': Bishop(),
+            'KING': King(),
+            'KNIGHT': Knight(),
+            'QUEEN': Queen(),
+            'ROOK': Rook(),
+            'PAWN': Pawn()
+        }
 
     def is_correct_move(self, move_data):
         source = _convert_to_point(move_data.get('source'))
@@ -39,17 +41,7 @@ class ChessService:
         logger.info(f"*** move after convert, destination : {destination}")
         logger.info(f"*** figure type                     : {figure_type}")
 
-        if figure_type == 'BISHOP':
-            return self.bishop_rules.is_correct_move(source, destination)
-        elif figure_type == 'KING':
-            return self.king_rules.is_correct_move(source, destination)
-        elif figure_type == 'KNIGHT':
-            return self.knight_rules.is_correct_move(source, destination)
-        elif figure_type == 'QUEEN':
-            return self.queen_rules.is_correct_move(source, destination)
-        elif figure_type == 'ROOK':
-            return self.rook_rules.is_correct_move(source, destination)
-        elif figure_type == 'PAWN':
-            return self.pawns_rules.is_correct_move(source, destination)
-        else:
-            return False
+        figure = self.figure_rules.get(figure_type)
+        if figure:
+            return figure.is_correct_move(source, destination)
+        return False

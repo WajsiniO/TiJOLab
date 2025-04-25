@@ -1,9 +1,4 @@
 class RulesOfGame:
-
-    """
-        Metoda zwraca true, tylko gdy przejscie z polozenia source na destination w jednym ruchu jest zgodne
-        z zasadami gry w szachy.
-    """
     def is_correct_move(self, source, destination):
         raise NotImplementedError("Subclasses must implement this method")
 
@@ -76,6 +71,3 @@ class Pawn(RulesOfGame):
             return (abs(source_row - dest_row) == 2 or abs(source_row - dest_row) == 1) and source != destination
 
         return abs(source_row - dest_row) == 1  and source != destination
-
-# TODO: Prosze dokonczyc implementacje kolejnych figur szachowych: Knight, King, Queen, Rook, Pawn
-# TODO: Klasy powinny dziedziczyc RulesOfGame
