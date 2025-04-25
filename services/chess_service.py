@@ -1,5 +1,5 @@
 import logging
-from .rules_of_game import Bishop, Knight
+from .rules_of_game import Bishop, King, Knight, Queen, Rook, Pawn
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +24,11 @@ def _convert_to_point(algebraic_notation):
 class ChessService:
     def __init__(self):
         self.bishop_rules = Bishop()
+        self.king_rules = King()
         self.knight_rules = Knight()
+        self.queen_rules = Queen()
+        self.rook_rules = Rook()
+        self.pawns_rules = Pawn()
 
     def is_correct_move(self, move_data):
         source = _convert_to_point(move_data.get('source'))
@@ -37,9 +41,15 @@ class ChessService:
 
         if figure_type == 'BISHOP':
             return self.bishop_rules.is_correct_move(source, destination)
+        elif figure_type == 'KING':
+            return self.king_rules.is_correct_move(source, destination)
         elif figure_type == 'KNIGHT':
             return self.knight_rules.is_correct_move(source, destination)
+        elif figure_type == 'QUEEN':
+            return self.queen_rules.is_correct_move(source, destination)
+        elif figure_type == 'ROOK':
+            return self.rook_rules.is_correct_move(source, destination)
+        elif figure_type == 'PAWN':
+            return self.pawns_rules.is_correct_move(source, destination)
         else:
             return False
-
-        # TODO: dokoncz implementacje kolejny figur
