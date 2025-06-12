@@ -22,7 +22,7 @@ Proszę, abyś skupił się na identyfikacji:
 4. Potencjalnych luk w logice lub niejednoznaczności w opisie, które mogą prowadzić do błędów.
 
 Każdy wygenerowany przypadek testowy powinien być sformułowany jasno i zwięźle oraz zawierać następujące elementy w formacie Markdown:
-* **ID Testu:** Krótki, unikalny identyfikator (np. TC_LOGIN_001).
+* **ID Testu:** Krótki, unikalny identyfikator.
 * **Opis Testu:** Jedno zdanie opisujące cel testu.
 * **Warunki Wstępne (jeśli dotyczy):** Co musi być spełnione przed wykonaniem testu.
 * **Kroki do Wykonania:** Numerowana lista konkretnych akcji do wykonania przez testera.
@@ -45,5 +45,5 @@ Oto opis funkcjonalności do analizy:
             return "Błąd: Model Gemini nie zwrócił treści w odpowiedzi."
 
     except Exception as e:
-        print(f"Błąd API: {e}") # Logujemy błąd w konsoli serwera
+        print(f"Błąd API: {e}")
         return f"Wystąpił błąd podczas komunikacji z API Gemini: {e}"
