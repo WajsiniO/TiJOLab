@@ -28,14 +28,15 @@ python-dotenv: Do zarządzania zmiennymi środowiskowymi (klucz API).
 mistune: Do konwersji odpowiedzi (Markdown) na HTML.
 
 # Struktura Projektu
-/
-├── templates/
-│   └── index.html         # Szablon HTML strony głównej
-├── .env                     # Plik konfiguracyjny z kluczem API (lokalnie)
-├── app.py                   # Główny plik aplikacji Flask (serwer i logika)
-├── gemini_client.py         # Moduł odpowiedzialny za komunikację z API Gemini
-└── requirements.txt         # Lista zależności projektu
 
+```
+├── templates
+│  └── index.html         
+├── .env                   
+├── app.py                   
+├── gemini_client.py         
+└── requirements.txt         
+```
 # Instalacja i Uruchomienie
 Aby uruchomić projekt lokalnie, postępuj zgodnie z poniższymi krokami.
 
