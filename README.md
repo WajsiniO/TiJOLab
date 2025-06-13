@@ -1,6 +1,8 @@
 Asystent AI do Generowania Przypadków Testowych
 Prosta aplikacja webowa oparta na frameworku Flask, która wykorzystuje API Google Gemini do automatycznego generowania przypadków testowych na podstawie opisu funkcjonalności oprogramowania.
 
+Autor: Aleksander Wajs - 36412
+
 # Kluczowe Funkcje
 
 ### Interfejs Webowy: 
